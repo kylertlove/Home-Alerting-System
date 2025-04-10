@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AlertingApplication<alerting>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "net.kyler.alerting.AlertingApplication",
+            "projectName": "alerting",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
