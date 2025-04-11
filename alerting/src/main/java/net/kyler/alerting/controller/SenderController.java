@@ -16,7 +16,7 @@ public class SenderController {
 
     private final AlertingService alertingService;
 
-    @PostMapping("/send-sms")
+    @PostMapping("/alert")
     @ResponseStatus(HttpStatus.OK)
     public void sendSms(@RequestBody Message message) {
         alertingService.sendTextMessage(message);

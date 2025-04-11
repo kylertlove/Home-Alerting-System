@@ -11,5 +11,4 @@ public enum CarrierGateway {
     CarrierGateway(String gateway) {
         this.gateway = gateway;
     }
-
 }

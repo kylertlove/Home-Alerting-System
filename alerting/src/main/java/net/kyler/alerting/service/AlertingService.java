@@ -14,9 +14,15 @@ public class AlertingService {
     private final JavaMailSender mailSender;
 
     public void sendTextMessage(Message message) {
-        String to = message.getPhoneNumber() + "@" + message.getGateway().getGateway();
+        String to;
+        if(message.getGateway() != null) {
+            to = message.getUserIdentifier() + "@" + message.getGateway().getGateway();
+        } else {
+            to = message.getUserIdentifier();
+        }
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(to);
+        mailMessage.setFrom("HomeAlertingMessage@Kyler.com");
         mailMessage.setSubject(message.getHeader());
         mailMessage.setText(message.getMessage());
         mailSender.send(mailMessage);

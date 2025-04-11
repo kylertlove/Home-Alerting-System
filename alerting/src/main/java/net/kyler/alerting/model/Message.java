@@ -5,9 +5,8 @@ import net.kyler.alerting.util.CarrierGateway;
 
 @Data
 public class Message {
-    private String phoneNumber;
+    private String userIdentifier;
     private String header;
     private String message;
     private CarrierGateway gateway;
-
 }

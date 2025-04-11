@@ -8,7 +8,11 @@
             "mainClass": "net.kyler.alerting.AlertingApplication",
             "projectName": "alerting",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": [
+                "-Dspring.profiles.active=test",
+                "-Dspring.config.additional-location=/home/kyler/Documents/code/java/configs/alerting/application.properties"
+            ]
         }
     ]
 }
