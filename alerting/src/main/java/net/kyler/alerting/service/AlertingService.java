@@ -5,10 +5,12 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.kyler.alerting.model.Message;
 
 @AllArgsConstructor
 @Service
+@Slf4j
 public class AlertingService {
     
     private final JavaMailSender mailSender;
@@ -25,6 +27,7 @@ public class AlertingService {
         mailMessage.setFrom("HomeAlertingMessage@Kyler.com");
         mailMessage.setSubject(message.getHeader());
         mailMessage.setText(message.getMessage());
+        log.info("Sending Alert: {}", mailMessage.toString());
         mailSender.send(mailMessage);
     }
 }
